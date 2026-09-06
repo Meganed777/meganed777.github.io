@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Curriculum vitæ de Mégane Dupuis, finissante en génie biotechnologique à l'Université de Sherbrooke.">
+<title>Mégane Dupuis — CV</title>
+<style>
+:root{
+  --bg:#F1F3EE;
+  --surface:#FFFFFF;
+  --ink:#1B2420;
+  --ink-soft:#4B564F;
+  --amber:#A6753A;
+  --teal:#375E6B;
+  --pale-blue:#E7EEF8;
+  --border:#D7D9CF;
+  --border-strong:#B9BDAE;
+  --max:1100px;
+  --font:'Avenir Next',Avenir,'Century Gothic','Segoe UI',sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font);
+  font-size:16px;
+  line-height:1.55;
+}
+a{color:var(--teal)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+
+/* Navigation identique au portfolio */
+nav{
+  background:rgba(241,243,238,.94);
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:100;
+  backdrop-filter:blur(7px);
+}
+nav .wrap{
+  min-height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding-top:8px;
+  padding-bottom:8px;
+}
+.brand{font-weight:700;font-size:17px;color:var(--ink);text-decoration:none;white-space:nowrap}
+nav ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px 18px;margin:0;padding:0}
+nav a{color:var(--ink-soft);text-decoration:none;font-size:14.5px;font-weight:500;white-space:nowrap}
+nav a:hover{color:var(--amber)}
+nav a.active{color:var(--ink);position:relative}
+nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:2px;background:var(--amber)}
+
+/* Header */
+.cv-hero{border-bottom:1px solid var(--border);padding:54px 0 42px}
+.cv-hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);gap:54px;align-items:center}
+.cv-hero-copy{display:flex;flex-direction:column;justify-content:center}
+.kicker{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:9px}
+h1,h2,h3,h4{margin:0;color:var(--ink)}
+h1{font-size:clamp(42px,6vw,68px);line-height:.98;letter-spacing:-.035em;font-weight:700}
+.intro{max-width:72ch;margin:20px 0 0;color:var(--ink-soft);font-size:16px;line-height:1.65;text-align:justify;hyphens:auto}
+.contact-panel{border-left:1px solid var(--border);padding-left:28px;display:flex;flex-direction:column;justify-content:center}
+.contact-panel-inner{width:min(100%,330px);margin:0 auto}
+.download-card{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;padding:13px 15px;margin-bottom:18px;border:1px solid #B7C9D6;border-radius:9px;background:var(--pale-blue);color:var(--teal);text-decoration:none;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.download-card:hover{transform:translateY(-2px);border-color:var(--teal);box-shadow:0 7px 18px rgba(55,94,107,.09)}
+.download-card-main{display:flex;align-items:center;gap:10px;min-width:0}
+.download-card svg{width:18px;height:18px;fill:currentColor;flex:0 0 auto}
+.download-card strong{display:block;font-size:13px;line-height:1.2;color:var(--teal)}
+.download-card small{display:block;margin-top:2px;font-size:10.5px;color:var(--ink-soft);font-weight:500}
+.download-arrow{font-size:18px;line-height:1;color:var(--amber)}
+.contact-title{font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--ink-soft);margin-bottom:10px}
+.contact-list{display:flex;flex-direction:column;gap:8px}
+.contact-list a,.contact-list span{display:flex;align-items:center;gap:9px;color:var(--teal);text-decoration:none;font-size:13px;font-weight:600;overflow-wrap:anywhere}
+.contact-list svg{width:15px;height:15px;fill:currentColor;flex:0 0 auto}
+
+/* Main layout */
+.cv-body{padding:54px 0 72px}
+.cv-grid{display:grid;grid-template-columns:310px minmax(0,1fr);gap:56px;align-items:start}
+.rail{display:flex;flex-direction:column;gap:42px;background:var(--pale-blue);border:1px solid #D4E0EC;border-radius:10px;padding:28px 24px}
+.main-column{display:flex;flex-direction:column;gap:52px}
+.section-title{font-size:28px;line-height:1.08;font-weight:650;letter-spacing:-.02em;position:relative;padding-left:17px;margin-bottom:24px}
+.section-title::before{content:"";position:absolute;left:0;top:2px;bottom:2px;width:3px;background:var(--amber)}
+.rail .section-title{font-size:21px;color:var(--teal)}
+
+/* Formations */
+.education-list{display:flex;flex-direction:column;gap:26px}
+.education-item{padding-bottom:24px;border-bottom:1px solid var(--border)}
+.education-item:last-child{padding-bottom:0;border-bottom:0}
+.item-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.item-head h3{font-size:15px;line-height:1.25;text-transform:uppercase;letter-spacing:.055em;font-weight:700}
+.date{color:var(--teal);font-size:13px;line-height:1.35;text-align:right;white-space:nowrap;font-weight:600}
+.school,.role,.project-subtitle{color:var(--teal);font-size:14px;line-height:1.35;margin-top:2px}
+.meta{color:var(--ink-soft);font-size:13px;margin-top:2px}
+.desc{color:var(--ink-soft);font-size:13.5px;line-height:1.55;margin:7px 0 0;text-align:justify;hyphens:auto}
+
+/* Side lists */
+.simple-list{margin:0;padding-left:19px}
+.simple-list li{margin:4px 0;font-size:13.5px;line-height:1.4}
+.awards li{margin:6px 0}
+
+/* Skills */
+.skills-card{background:var(--teal);color:white;border-radius:10px;padding:25px 28px;box-shadow:0 8px 26px rgba(27,36,32,.05)}
+.skills-card .section-title{color:white;margin-bottom:18px;padding-left:0}
+.skills-card .section-title::before{display:none}
+.skill-row{padding:10px 0;border-top:1px solid rgba(255,255,255,.22);font-size:14px;line-height:1.5}
+.skill-row:first-of-type{border-top:0;padding-top:0}
+.skill-row:last-child{padding-bottom:0}
+.skill-row strong{font-weight:700;color:white;margin-right:4px}
+
+/* Timelines */
+.timeline{position:relative;margin-left:2px}
+.timeline::before{content:"";position:absolute;left:94px;top:8px;bottom:8px;width:2px;background:var(--teal);opacity:.72}
+.timeline-item{display:grid;grid-template-columns:76px 1fr;gap:40px;position:relative;padding:0 0 30px}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-date{font-size:12.5px;line-height:1.25;text-align:right;color:var(--ink-soft);padding-top:3px}
+.timeline-dot{position:absolute;left:87px;top:4px;width:16px;height:16px;border-radius:50%;border:3px solid var(--teal);background:var(--bg)}
+.timeline-content h3{font-size:17px;text-transform:uppercase;letter-spacing:.055em;line-height:1.2;font-weight:700}
+.timeline-content .role{font-size:14px}
+.timeline-content ul{margin:6px 0 0;padding-left:19px}
+.timeline-content li{margin:2px 0;font-size:13.5px;line-height:1.4}
+.timeline-content p{margin:5px 0 0;color:var(--ink-soft);font-size:13.5px;line-height:1.45;text-align:justify;hyphens:auto}
+
+/* Second-band layout */
+.section-divider{height:1px;background:var(--border);margin:8px 0 0}
+.lower-grid{display:grid;grid-template-columns:310px minmax(0,1fr);gap:56px;align-items:start;padding-top:52px}
+
+/* Implication */
+.involvement{align-self:center;background:var(--pale-blue);border:1px solid #D4E0EC;border-radius:10px;padding:28px 22px}
+.involvement .section-title{margin-top:0}
+.involvement .timeline::before{left:76px}
+.involvement .timeline-item{grid-template-columns:60px 1fr;gap:36px;padding-bottom:27px}
+.involvement .timeline-dot{left:69px}
+.involvement .timeline-date{font-size:11.5px}
+.involvement .timeline-content h3{font-size:14px}
+.involvement .timeline-content .role{font-size:12.5px}
+.involvement .timeline-content p{font-size:12.7px}
+
+/* Projects */
+.projects-intro{color:var(--ink-soft);font-size:13.5px;margin:-14px 0 20px;max-width:70ch}
+.project-list{display:flex;flex-direction:column;gap:19px}
+.project{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px 24px}
+.project.featured{background:var(--teal);border-color:var(--teal);color:white}
+.project.featured h3,.project.featured .project-date,.project.featured .project-subtitle,.project.featured li{color:white}
+.project-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:start}
+.project h3{font-size:17px;line-height:1.2;text-transform:uppercase;letter-spacing:.045em;font-weight:700}
+.project-date{font-size:12.5px;color:var(--ink-soft);white-space:nowrap;margin-top:1px}
+.project ul{margin:8px 0 0;padding-left:20px}
+.project li{font-size:13.5px;line-height:1.45;margin:3px 0}
+
+/* Back to top */
+.back-top{position:fixed;right:24px;bottom:22px;width:38px;height:38px;border:1px solid var(--border-strong);border-radius:50%;background:rgba(255,255,255,.9);color:var(--teal);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:18px;box-shadow:0 6px 18px rgba(27,36,32,.08)}
+.back-top:hover{border-color:var(--teal)}
+
+@media (max-width:900px){
+  .cv-hero-grid,.cv-grid,.lower-grid{grid-template-columns:1fr}
+  .contact-panel{border-left:0;border-top:1px solid var(--border);padding:22px 0 0}
+  .contact-panel-inner{width:100%;max-width:520px;margin:0}
+  .rail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px;padding:26px}
+  .lower-grid{gap:44px}
+  .involvement{max-width:760px;align-self:start}
+}
+@media (max-width:720px){
+  nav .wrap{flex-direction:column;gap:7px;align-items:center}
+  nav ul{justify-content:center;gap:5px 11px}
+  nav a{font-size:12px}
+  nav a.active::after{bottom:-5px}
+  .cv-hero{padding:38px 0 32px}
+  .cv-body{padding-top:38px}
+  .wrap{padding-left:18px;padding-right:18px}
+  .rail{grid-template-columns:1fr}
+  .cv-grid,.lower-grid{gap:40px}
+  .timeline::before{left:72px}
+  .timeline-item{grid-template-columns:57px 1fr;gap:31px}
+  .timeline-dot{left:65px}
+  .involvement .timeline::before{left:66px}
+  .involvement .timeline-item{grid-template-columns:52px 1fr;gap:31px}
+  .involvement .timeline-dot{left:59px}
+  h1{font-size:42px}
+}
+@media (max-width:480px){
+  .project{padding:18px}
+  .project-head{grid-template-columns:1fr;gap:5px}
+  .project-date{white-space:normal}
+  .timeline-content li,.project li{font-size:13px}
+}
+
+/* Impression propre depuis le navigateur */
+@media print{
+  nav,.back-top,.download-card{display:none!important}
+  body{background:white;font-size:10pt}
+  .wrap{max-width:none;padding:0}
+  .cv-hero{padding:18mm 15mm 8mm}
+  .cv-body{padding:8mm 15mm 12mm}
+  .project,.skills-card{box-shadow:none}
+  a{text-decoration:none;color:inherit}
+  .timeline-dot{background:white}
+}
+</style>
+
+<style id="comments-2026-09-06-v3">
+/* Derniers commentaires — resserrer la mise en page du CV */
+@media (min-width:901px){
+  .cv-hero{padding-top:46px;padding-bottom:36px;}
+  .intro{margin-top:10px;}
+  .cv-grid{
+    grid-template-columns:320px minmax(0,1fr);
+    gap:34px;
+    align-items:stretch;
+  }
+  .rail{
+    height:100%;
+    box-sizing:border-box;
+  }
+}
+.download-card{
+  justify-content:flex-start;
+}
+.download-arrow{display:none!important;}
+</style>
+
+<style id="wow-interactions-v4">
+/* Interactive polish — web CV */
+.awards li{position:relative}
+.award-link,.external-title,.subtitle-ext{color:inherit;text-decoration:none}
+.award-link{display:inline-flex;align-items:baseline;gap:6px;transition:color .2s ease,transform .2s ease}
+.award-link::after{content:"↗";font-size:.78em;color:var(--teal);opacity:0;transform:translate(-3px,2px);transition:opacity .2s ease,transform .2s ease}
+.award-link:hover{color:var(--teal);transform:translateX(2px)}
+.award-link:hover::after{opacity:1;transform:translate(0,0)}
+.external-title{position:relative;display:inline-block}
+.external-title::after{content:" ↗";color:var(--amber);font-size:.72em;opacity:.5;transition:opacity .18s ease,transform .18s ease;display:inline-block}
+.external-title:hover::after{opacity:1;transform:translate(2px,-2px)}
+.subtitle-ext{display:inline-block;margin-left:4px;font-weight:800;opacity:.72;transition:opacity .18s ease,transform .18s ease}
+.subtitle-ext:hover{opacity:1;transform:translate(2px,-2px)}
+
+.project{position:relative;overflow:hidden;transition:transform .28s cubic-bezier(.2,.75,.25,1),box-shadow .28s ease,border-color .28s ease}
+.project::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--amber);transform:scaleY(0);transform-origin:top;transition:transform .32s cubic-bezier(.2,.75,.25,1);border-radius:10px 0 0 10px}
+.project:hover{transform:translateY(-3px);box-shadow:0 13px 30px rgba(27,36,32,.09);border-color:rgba(55,94,107,.35)}
+.project:hover::before{transform:scaleY(1)}
+.project.featured::before{background:rgba(255,255,255,.72)}
+
+
+.timeline-content h3 .external-title{
+  color:inherit;
+  text-decoration:none;
+  text-underline-offset:3px;
+}
+.timeline-content h3 .external-title:hover{
+  color:var(--teal);
+  text-decoration:underline;
+  text-decoration-color:rgba(55,94,107,.35);
+}
+
+/* Timeline draw + entry motion — même logique que le portfolio */
+.timeline{--wow-line-x:94px}
+.involvement .timeline{--wow-line-x:76px}
+.cv-timeline-progress{
+  position:absolute;
+  left:var(--wow-line-x);
+  top:8px;
+  width:2px;
+  height:0;
+  border-radius:999px;
+  background:linear-gradient(to bottom,var(--amber),#C59B68);
+  box-shadow:0 0 0 1px rgba(166,117,58,.08);
+  z-index:2;
+  pointer-events:none;
+  will-change:height;
+}
+.timeline-dot{
+  z-index:3;
+  transition:background-color .28s ease,border-color .28s ease,transform .28s ease,box-shadow .28s ease;
+}
+.timeline-item.timeline-passed .timeline-dot{
+  background:var(--amber);
+  border-color:var(--amber);
+  transform:scale(1.06);
+  box-shadow:0 0 0 4px var(--bg);
+}
+.involvement .timeline-item.timeline-passed .timeline-dot{
+  box-shadow:0 0 0 4px var(--pale-blue);
+}
+.timeline-item .timeline-content,.timeline-item .timeline-date{
+  transition:opacity .46s ease,transform .46s cubic-bezier(.2,.75,.25,1);
+}
+html.wow-ready .timeline-item:not(.wow-visible) .timeline-content{opacity:.22;transform:translateX(14px)}
+html.wow-ready .timeline-item:not(.wow-visible) .timeline-date{opacity:.3;transform:translateX(-6px)}
+.timeline-item.wow-visible .timeline-content,.timeline-item.wow-visible .timeline-date{opacity:1;transform:none}
+
+/* Staggered project reveal */
+html.wow-ready .project.wow-card:not(.wow-visible){opacity:0;transform:translateY(18px) scale(.992)}
+.project.wow-card.wow-visible{opacity:1}
+
+@media (prefers-reduced-motion:reduce){
+  .cv-timeline-progress{display:none}
+  html.wow-ready .timeline-item:not(.wow-visible) .timeline-content,
+  html.wow-ready .timeline-item:not(.wow-visible) .timeline-date,
+  html.wow-ready .project.wow-card:not(.wow-visible){opacity:1;transform:none}
+}
+@media print{
+  .subtitle-ext{display:none!important}
+  .award-link::after,.external-title::after{display:none!important}
+  .cv-timeline-progress{display:none!important}
+  .timeline-item .timeline-content,.timeline-item .timeline-date,.project{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body id="top">
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html#home">Mégane Dupuis</a>
+    <ul>
+      <li><a href="index.html#home">Accueil</a></li>
+      <li><a href="index.html#projects">Projets</a></li>
+      <li><a href="index.html#experience">Expérience</a></li>
+      <li><a href="index.html#skills">Formations &amp; compétences</a></li>
+      <li><a href="index.html#leadership">Implication étudiante</a></li>
+      <li><a class="active" href="cv.html" aria-current="page">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="cv-hero">
+  <div class="wrap cv-hero-grid">
+    <div class="cv-hero-copy">
+      <div class="kicker">Curriculum vitæ</div>
+      <h1>Mégane Dupuis</h1>
+      <p class="intro">Finissante au baccalauréat en génie biotechnologique, je possède une formation multidisciplinaire combinant génie des procédés, biotechnologie, conception et modélisation. Mon parcours se distingue également par une forte implication technique et entrepreneuriale, de plus de dix ans en robotique jusqu'à la cofondation du premier groupe technique en biotechnologie de l'UdeS.</p>
+    </div>
+    <aside class="contact-panel" aria-label="Coordonnées">
+      <div class="contact-panel-inner">
+        <a class="download-card" href="CV_Megane_Dupuis.pdf" download="CV_Megane_Dupuis.pdf" aria-label="Télécharger le CV de Mégane Dupuis en PDF">
+          <span class="download-card-main">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17V3ZM5 19h14v2H5v-2Z"/></svg>
+            <span><strong>Télécharger mon CV</strong><small>Version PDF · 2 pages</small></span>
+          </span>
+        </a>
+        <div class="contact-title">Contact</div>
+        <div class="contact-list">
+        <a href="mailto:Megane.Dupuis2@usherbrooke.ca" aria-label="Courriel">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 13.065 2.4 6.4A2 2 0 0 1 4 5h16a2 2 0 0 1 1.6 1.4L12 13.065ZM22 8.04V18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.04l9.43 6.55a1 1 0 0 0 1.14 0L22 8.04Z"/></svg>
+          Megane.Dupuis2@usherbrooke.ca
+        </a>
+        <a href="tel:+15147706202" aria-label="Téléphone">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"/></svg>
+          514-770-6202
+        </a>
+        <a href="https://meganed777.github.io" target="_blank" rel="noopener" aria-label="Portfolio">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.59 13.41a2 2 0 0 0 2.82 0l3-3a2 2 0 1 0-2.82-2.82l-1.09 1.08-1.41-1.41 1.08-1.09a4 4 0 1 1 5.66 5.66l-3 3a4 4 0 0 1-5.66 0l-.58-.59 1.42-1.41.58.58Zm2.82-2.82-2.82 2.82-1.42-1.41 2.83-2.83 1.41 1.42Zm-2.58 4.24-1.08 1.09a4 4 0 1 1-5.66-5.66l3-3a4 4 0 0 1 5.66 0l.58.58-1.42 1.42-.58-.59a2 2 0 0 0-2.82 0l-3 3a2 2 0 1 0 2.82 2.82l1.09-1.08 1.41 1.42Z"/></svg>
+          meganed777.github.io
+        </a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<main class="cv-body">
+  <div class="wrap">
+    <div class="cv-grid">
+      <aside class="rail">
+        <section id="formations">
+          <h2 class="section-title">Formations</h2>
+          <div class="education-list">
+            <article class="education-item">
+              <div class="item-head">
+                <h3>Maîtrise en génie biotechnologique</h3>
+                <div class="date">2027–<br>2028</div>
+              </div>
+              <div class="school">Université de Sherbrooke</div>
+              <p class="desc">Modification du métabolisme et optimisation du procédé de production d'acide polyglutamique (PGA) chez Bacillus subtilis Natto — sous la supervision du Pr Patrick Vermette, PhD.</p>
+            </article>
+            <article class="education-item">
+              <div class="item-head">
+                <h3>Baccalauréat en génie biotechnologique</h3>
+                <div class="date">2022–<br>2026</div>
+              </div>
+              <div class="school">Université de Sherbrooke</div>
+              <div class="meta">Programme COOP</div>
+            </article>
+            <article class="education-item">
+              <div class="item-head">
+                <h3>Diplôme d’études collégiales en sciences de la nature</h3>
+                <div class="date">2019–<br>2022</div>
+              </div>
+              <div class="school">CÉGEP Marie-Victorin</div>
+              <div class="meta">Profil sciences de la santé</div>
+            </article>
+          </div>
+        </section>
+
+        <section id="langues">
+          <h2 class="section-title">Langues</h2>
+          <ul class="simple-list">
+            <li>Français : langue maternelle</li>
+            <li>Anglais : courant</li>
+            <li>Espagnol : niveau scolaire</li>
+          </ul>
+        </section>
+
+        <section id="distinctions">
+          <h2 class="section-title">Distinctions</h2>
+          <ul class="simple-list awards">
+            <li><a class="award-link" href="https://www.usherbrooke.ca/admission/couts-et-aide-financiere/bourses-et-aide-financiere/repertoire-des-bourses/details/500-ghd-gen-01" target="_blank" rel="noopener">Bourse Fondation GHD — 2 500 $</a></li>
+            <li><a class="award-link" href="https://www.quebec.ca/gouvernement/reconnaissance-prix/education/chapeau-les-filles-excelle-science/a-propos" target="_blank" rel="noopener">Bourse Chapeau, les filles! — 5 000 $</a></li>
+            <li><a class="award-link" href="https://www.usherbrooke.ca/genie/bourses-etudiantes/bourses-pour-etudiantes-en-genie" target="_blank" rel="noopener">Bourse d'admission MégaGénIALE</a></li>
+            <li>Bourse Leader Montréal — 2 500 $</li>
+            <li><a class="award-link" href="https://www.desjardins.com/fr/a-propos/communaute/developpement-collectif/bourses-etudes.html" target="_blank" rel="noopener">Bourse Caisse Desjardins — 500 $</a></li>
+            <li><a class="award-link" href="https://aquaaction.org/fr/" target="_blank" rel="noopener">Bourse AquaAction — 1 000 $</a></li>
+          </ul>
+        </section>
+
+        <section id="interets">
+          <h2 class="section-title">Centres d’intérêt</h2>
+          <ul class="simple-list">
+            <li>Impression 3D</li>
+            <li>Entrepreneuriat</li>
+            <li>Voyages</li>
+            <li>Menuiserie</li>
+            <li>Ski et planche à neige</li>
+          </ul>
+        </section>
+      </aside>
+
+      <div class="main-column">
+        <section id="competences">
+          <div class="skills-card">
+            <h2 class="section-title">Compétences</h2>
+            <div class="skill-row"><strong>Biotechnologie :</strong> Biologie moléculaire · Ingénierie métabolique · Biologie synthétique · COBRApy · Galaxy · Benchling · Escher · ApE</div>
+            <div class="skill-row"><strong>Génie des procédés :</strong> Aspen Plus · SuperPro Designer · Scale-up · P&amp;ID · Bilans de matière et d’énergie · Opérations unitaires · Analyse technico-économique</div>
+            <div class="skill-row"><strong>Laboratoire :</strong> Culture cellulaire animale · HPLC · Filtration membranaire · Bioréacteurs · alamarBlue / Live-Dead · Freeze-casting · Lyophilisation</div>
+            <div class="skill-row"><strong>Mécanique :</strong> CAO 3D (Onshape/SolidWorks) · AutoCAD · Conception mécanique · Prototypage rapide · Impression 3D · Mise en plan · Thermoformage</div>
+            <div class="skill-row"><strong>Informatique :</strong> Python · Jupyter Notebook · VBA · OpenModelica · Ladder (PLC)</div>
+          </div>
+        </section>
+
+        <section id="experience">
+          <h2 class="section-title">Expérience professionnelle</h2>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-date">Avril 2026<br>– Présent</div><span class="timeline-dot"></span>
+              <div class="timeline-content">
+                <h3><a class="external-title" href="https://dbointernational.com/" target="_blank" rel="noopener">DBO International</a></h3>
+                <div class="role">Chargée de projet - Conception de produit<br>Stagiaire - Assainissement des eaux (2023,2026)</div>
+                <ul>
+                  <li>Pilotage de projets de développement</li>
+                  <li>Analyses de faisabilité et conception de solutions techniques</li>
+                  <li>Planification et réalisation d'essais sur bancs expérimentaux</li>
+                  <li>Analyse et interprétation de résultats</li>
+                  <li>Coordination technique avec les fournisseurs</li>
+                  <li>Création d’outils internes de gestion de projet</li>
+                </ul>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-date">Automne<br>2025</div><span class="timeline-dot"></span>
+              <div class="timeline-content">
+                <h3><a class="external-title" href="https://www.usherbrooke.ca/" target="_blank" rel="noopener">Université de Sherbrooke</a></h3>
+                <div class="role">Chargée d'exercices — Thermodynamique</div>
+                <ul><li>Animation de séances d'exercices</li><li>Soutien pédagogique</li></ul>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-date">Été 2025</div><span class="timeline-dot"></span>
+              <div class="timeline-content">
+                <h3><a class="external-title" href="https://1823.ca/fr/" target="_blank" rel="noopener">1823 Consulting</a></h3>
+                <div class="role">Stagiaire en traitement des eaux</div>
+                <ul>
+                  <li>Conception de procédés et diagrammes P&amp;ID</li>
+                  <li>Modélisation 3D des installations</li>
+                  <li>Analyses technico-économiques (CAPEX/OPEX)</li>
+                  <li>Recherche et développement pour des solutions innovantes</li>
+                </ul>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-date">Automne<br>2024</div><span class="timeline-dot"></span>
+              <div class="timeline-content">
+                <h3><a class="external-title" href="https://www.pyrotek.com/" target="_blank" rel="noopener">Pyrotek</a></h3>
+                <div class="role">Stagiaire en recherche et développement</div>
+                <ul>
+                  <li>Développement et validation de procédés</li>
+                  <li>Essais et formulations, du laboratoire à l'échelle pilote</li>
+                  <li>Documentation technique des résultats</li>
+                </ul>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-date">2021–<br>2022</div><span class="timeline-dot"></span>
+              <div class="timeline-content">
+                <h3><a class="external-title" href="https://robotiquefirstquebec.org/" target="_blank" rel="noopener">Robotique FIRST Québec</a> / <a class="external-title" href="https://www.fusionjeunesse.org/" target="_blank" rel="noopener">Fusion Jeunesse</a></h3>
+                <div class="role">Chargée de programme - FIRST LEGO LEAGUE</div>
+                <ul>
+                  <li>Déploiement et suivi du programme dans +20 écoles</li>
+                  <li>Recrutement, formation et encadrement des coordonnateurs</li>
+                  <li>Animation d'ateliers d'initiation à la robotique pour les jeunes</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="lower-grid">
+      <aside class="involvement" id="implication">
+        <h2 class="section-title">Implication étudiante</h2>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">2024–<br>Aujourd’hui</div><span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h3><a class="external-title" href="https://competition.igem.org/about" target="_blank" rel="noopener">iGEM - UdeS</a></h3>
+              <div class="role">Cofondation, présidence, VP entrepreneuriat</div>
+              <p>Cofondation du premier groupe technique en biotechnologie de l'UdeS; 25 000$ de financement, équipe de 25 personnes, médaille de bronze à Paris.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">2024–<br>Aujourd’hui</div><span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h3><a class="external-title" href="https://jeuxdegenie.qc.ca/" target="_blank" rel="noopener">Jeux de génie</a></h3>
+              <div class="role">Équipe Machine, Marraine</div>
+              <p>Conception technique (2024–2025), puis marraine (mentor) de la délégation de Rimouski-Moncton.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">2025–<br>2026</div><span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h3><a class="external-title" href="https://cfes.ca/cec/" target="_blank" rel="noopener">Génie conseil</a></h3>
+              <div class="role">Compétition canadienne d'ingénierie — Directrice</div>
+              <p>Organisation et coordination de l'épreuve Génie conseil de la compétition nationale.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">2023–<br>2025</div><span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h3>68e Promotion</h3>
+              <div class="role">Présidence</div>
+              <p>Coordination de la 68e promotion, incluant diverses activités de financement et amélioration du sentiment d’appartenance.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">2022–<br>2024</div><span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h3>Robotique UdeS</h3>
+              <div class="role">Robot en 3 jours — Relance &amp; direction</div>
+              <p>Dès mon entrée à l’université, j’ai participé à repartir le groupe inactif depuis 4 ans; recrutement, financement, organisation.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">2024</div><span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h3>AGEG</h3>
+              <div class="role">VP affaires universitaire</div>
+              <p>Suivi de dossiers académiques et représentation étudiante auprès des instances pour l’Association Étudiante En Génie.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">2012–<br>2021</div><span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h3><a class="external-title" href="https://www.firstroboticscanada.org/" target="_blank" rel="noopener">FIRST Robotics</a></h3>
+              <div class="role">Membre de l’équipe FLL et FRC</div>
+              <p>Participation active dans diverses équipes de robotique depuis mes 10 ans. Création d’une équipe au CÉGEP.</p>
+            </div>
+          </article>
+        </div>
+      </aside>
+
+      <section id="projets-cv">
+        <h2 class="section-title">Projets de recherche et d’innovation</h2>
+        <p class="projects-intro">Sélection de projets de recherche, d’innovation et de conception ayant marqué mon parcours.</p>
+        <div class="project-list">
+          <article class="project featured">
+            <div class="project-head">
+              <div><h3>Modification génétique de Bacillus subtilis Natto</h3><div class="project-subtitle">HydroMille - iGEM 2026 <a class="subtitle-ext" href="https://competition.igem.org/about" target="_blank" rel="noopener" aria-label="Site officiel iGEM">↗</a></div></div>
+              <div class="project-date">En cours</div>
+            </div>
+            <ul>
+              <li>Modélisation métabolique de B. subtilis Natto (Python, COBRApy, Galaxy)</li>
+              <li>Sélection de gènes et modification génétique par conjugaison bactérienne</li>
+              <li>Simulation technico-économique complète du procédé — bilans de matière, temps et coûts (SuperPro Designer)</li>
+              <li>Volet entrepreneurial complet : création de l'entreprise, analyse de marché et des compétiteurs, Business Model Canvas (B2B)</li>
+            </ul>
+          </article>
+
+          <article class="project">
+            <div class="project-head">
+              <div><h3>Régénération nerveuse — culture cellulaire et biomatériaux</h3><div class="project-subtitle">Stage de recherche sous la supervision du Dr. Marc-Antoine Lauzon &amp; Dr. Benoit Laurent à l’Université de Sherbrooke</div></div>
+              <div class="project-date">2024</div>
+            </div>
+            <ul>
+              <li>Culture et entretien de cellules de Schwann</li>
+              <li>Étude de l’effet de différents peptides bioactifs sur la viabilité cellulaire par essais alamarBlue et Live/Dead</li>
+              <li>Fabrication de conduits nerveux par freeze-casting et lyophilisation</li>
+              <li>Planification et réalisation autonome d’expériences, acquisition et interprétation des résultats afin d’ajuster les conditions expérimentales</li>
+              <li>Présentation hebdomadaire des résultats suivi de discussions critiques des données et planification des expériences suivantes</li>
+            </ul>
+          </article>
+
+          <article class="project">
+            <div class="project-head">
+              <div><h3>Biorémédiation par biolixiviation in-situ</h3><div class="project-subtitle">BioMétus — AquaHacking Québec / AquaAction (Top 10) <a class="subtitle-ext" href="https://aquaaction.org/fr/" target="_blank" rel="noopener" aria-label="Site officiel AquaAction">↗</a></div></div>
+              <div class="project-date">2025</div>
+            </div>
+            <ul>
+              <li>Responsable ingénierie — volet biolixiviation</li>
+              <li>Choix d’un consortium bactérien (Thiobacillus ferrooxidans et thiooxidans) pour extraire le cuivre des sédiments d’un lac contaminé</li>
+              <li>Conception du bioréacteur et choix des paramètres d’exploitation</li>
+              <li>Support à la conception mécanique de la base mobile et de la pompe</li>
+              <li>Participation à un incubateur entrepreneurial de 12 semaines</li>
+            </ul>
+          </article>
+
+          <article class="project">
+            <div class="project-head">
+              <div><h3>Pile à combustible microbienne</h3><div class="project-subtitle">Electrophyll — iGEM 2025 (Médaille de bronze) <a class="subtitle-ext" href="https://competition.igem.org/about" target="_blank" rel="noopener" aria-label="Site officiel iGEM">↗</a></div></div>
+              <div class="project-date">2024–2025</div>
+            </div>
+            <ul>
+              <li>Conception d’une pile à combustible microbienne à Geobacter sulfurreducens, intégrée à un système hydroponique</li>
+              <li>Participation à la stratégie d’ingénierie génétique visant l’amélioration du transfert extracellulaire d’électrons par les gènes pilA et omcZ</li>
+              <li>Développement et utilisation de modèles mathématiques pour étudier le comportement du système et soutenir les choix de conception</li>
+            </ul>
+          </article>
+
+          <article class="project">
+            <div class="project-head">
+              <div><h3>Conception mécanique et intégration robotique</h3><div class="project-subtitle">La Machine — Jeux de Génie du Québec 2025 &amp; 2026 (1re place) <a class="subtitle-ext" href="https://jeuxdegenie.qc.ca/" target="_blank" rel="noopener" aria-label="Site officiel des Jeux de génie">↗</a></div></div>
+              <div class="project-date">2024–2026</div>
+            </div>
+            <ul>
+              <li>Conception d'un mécanisme axe linéaire à pignon et crémaillère pour doubler la vitesse d’exécution par rapport au mécanisme initial</li>
+              <li>Conception d’une coque de bateau imprimée en 3D et du système de propulsion</li>
+              <li>Itérations multiples de modélisation, d’impression 3D et d’assemblage</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+<a class="back-top" href="#top" aria-label="Retour en haut">↑</a>
+
+<script id="wow-interactions-script-v5">
+(function(){
+  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.documentElement.classList.add('wow-ready');
+
+  const timelines = [...document.querySelectorAll('.timeline')].map(timeline => {
+    const progress = document.createElement('span');
+    progress.className = 'cv-timeline-progress';
+    progress.setAttribute('aria-hidden','true');
+    timeline.prepend(progress);
+    return {
+      el: timeline,
+      progress,
+      rows: [...timeline.querySelectorAll(':scope > .timeline-item')],
+      topInset: 8
+    };
+  });
+
+  const rowObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('wow-visible');
+    });
+  }, {threshold:.18, rootMargin:'0px 0px -12% 0px'});
+
+  timelines.forEach(t => t.rows.forEach(row => rowObserver.observe(row)));
+
+  function updateTimelines(){
+    const viewportProbe = window.innerHeight * .52;
+    timelines.forEach(t => {
+      const rect = t.el.getBoundingClientRect();
+      const total = Math.max(1, rect.height - 16);
+      const traveled = Math.min(total, Math.max(0, viewportProbe - rect.top - t.topInset));
+      t.progress.style.height = traveled + 'px';
+
+      t.rows.forEach(row => {
+        const dot = row.querySelector('.timeline-dot');
+        if(!dot) return;
+        const d = dot.getBoundingClientRect();
+        row.classList.toggle('timeline-passed', d.top + d.height / 2 <= viewportProbe);
+      });
+    });
+  }
+
+  const cards=[...document.querySelectorAll('.project')];
+  cards.forEach(c=>c.classList.add('wow-card'));
+  const cardObs=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('wow-visible');
+        cardObs.unobserve(entry.target);
+      }
+    });
+  },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  cards.forEach((c,i)=>{c.style.transitionDelay=(i%3)*45+'ms';cardObs.observe(c)});
+
+  let ticking=false;
+  function onScroll(){
+    if(ticking) return;
+    ticking=true;
+    requestAnimationFrame(()=>{
+      updateTimelines();
+      ticking=false;
+    });
+  }
+
+  updateTimelines();
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+
+  if(reduce){
+    document.querySelectorAll('.timeline-item,.project').forEach(el=>el.classList.add('wow-visible'));
+    document.querySelectorAll('.cv-timeline-progress').forEach(el=>el.style.display='none');
+  }
+})();
+</script>
+</body>
+</html>
